@@ -6,7 +6,7 @@ import Audio from "./components/Audio.jsx"
 import Profile from "./routes/Profile.jsx";
 import Education from "./routes/Education.jsx";
 import ImageResponse from "./components/ImageResponse.jsx";
-
+import FakeCall from "./components/FakeCall.jsx"
 function App() {
   return (
     <Router>
@@ -20,6 +20,7 @@ function App() {
             <Route path="/profile" element={<Profile />} /> 
             <Route path="/education" element={<Education />} />
             <Route path="/fraud/image/response" element={<ImageResponse />} />
+            <Route path="/education/tec_support_calls" element={<FakeCall />} />
           </Routes>
         </div>
       </div>

@@ -1,0 +1,34 @@
+import React from 'react';
+import '../styles/fakeCall.css';
+
+function FakeCall() {
+    const examples = [
+        { front: "The caller might say they need you to share a special code to confirm a delivery or a service", back: "Never share personal codes over the phone!" },
+        { front: "The caller may claim to be your relative, saying they’re in danger or facing a serious problem.", back: "Verify their identity before sending money." },
+        { front: "Scammers may pretend to be from the bank, government, or charity, asking for information.", back: "Contact the institution directly to verify." }
+    ];
+
+    return (
+      <div className="response-container">
+          <div className="imagen-card">
+              <p className="title-image">Fake calls</p>
+        </div>
+        <p className="fake-description">Sometimes, you might receive a phone call from someone pretending to be a friend, family member, or even a delivery company. Here are some common ways these fake calls try to trick you:</p>
+        <div className='recommendations'>
+        {examples.map((rec, index) => (
+          <div key={index} className="fake-example">
+            <div className="card-front">
+              <p>{rec.front}</p>
+            </div>
+            <div className="card-back">
+              <p>{rec.back}</p>
+            </div>
+          </div>
+        ))}
+        </div>
+      </div>
+    );
+}
+
+export default FakeCall;
+
