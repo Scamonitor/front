@@ -1,16 +1,49 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/imagen.css';
-import imagendos from '../images/upload_image.png'; 
+import gallery from "../images/gallery.png";
+import imagendos from '../images/upload_image.png';
+import question from "../images/question.png" 
+import PopUpIA from "./PopUpIA"
 function Imagen() {
+
+  const fileInputRef = useRef(null);
+
+  const handleContainerClick = () => {
+    fileInputRef.current.click(); 
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log('Archivo seleccionado:', file);
+    }
+  };
     return (
       <div className="imagen-container">
         <div className="imagen-card">
-        <p className="title-image">Analyze card</p>
+        <p className="title-image">Analyze image</p>
+        <img className="icon-gallery" src={gallery} alt="Call icon" /> 
+
       </div>
-      <p>Tapping the blue rectangle will open your gallery. Select the screenshot you took that seems suspicious.</p>
-      <div className="upload-image-card">
-        <imagendos/>
-      </div>
+      <p className='imagen-description'>Tapping the blue rectangle will open your gallery. 
+        Select the screenshot you took that seems suspicious.
+        We will use Artificial Intelligence to analyze this image and tell you what is going on.</p>
+        <button className="button-help">
+      <img className="question-mark" src={question} alt="Call icon" /> 
+        ¿What is artificial intelligence?
+        </button>
+        <div className="upload-container"
+        onClick={handleContainerClick}>
+        
+          <img className="imagendos" src={imagendos} alt="Call icon" /> 
+          <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handleFileChange}
+          accept="image/*"  
+          style={{ display: 'none' }}  
+        />
+        </div>      
       </div>
     );
   }

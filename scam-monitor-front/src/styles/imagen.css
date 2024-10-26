@@ -6,23 +6,26 @@
     padding: 20px;
     background-color: #EFEFEF;
     width: 100%;
-    max-width: 800px;
+    height: screen;
     justify-content: center;
 
 }
 .imagen-card {
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    border-radius: 20px;
-    background: linear-gradient(to bottom, #3C78DD, #204177);
-    height: 50px;
-    justify-content: center;
-  }
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #0F489D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 20px; 
+  height: 10px;
+}
+
   .upload-image-card{
     width: 200px;
     height: 150px;
@@ -30,5 +33,62 @@
   .title-image{
     font-weight: bold;
     font-size: 25px;
+    text-align: left;
   }
-  
+  .imagen-description{
+    font-weight: bold;
+    width: 300px;
+  }
+  .button-help {
+    background-color: #84b5ff;
+    border-radius: 30px;
+    padding: 15px;
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    border: none;         
+    outline: none;    
+    gap: 1rem;
+    font-weight: bold;
+    font-size: 15px;    
+    cursor: pointer;     
+}
+
+.button-help:focus {
+    outline: none;
+}
+
+.button-help:hover {
+    background-color: #6da1ff;  
+    transform: translateY(-5px); 
+    transition: all 0.2s ease;   
+}
+
+
+.button-help:active {
+    transform: translateY(1px);  
+}
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #A5B6D2;
+  border-radius: 30px;
+  height: 300px;
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-gallery{
+  width: 50px;
+  height: 40px;
+}
+.question-mark{
+  width: 20px;
+  height: 20px;
+}
+.imagendos{
+  height:25rem;
+  width:25rem;
+}

@@ -6,13 +6,12 @@
     padding: 20px;
     background-color: #EFEFEF;
     width: 100%;
-    max-width: 800px;
     justify-content: center;
 
 }
   .fraud-card {
-    display: flex;           /* Activa flexbox */
-    align-items: center;     /* Centra verticalmente los elementos */
+    display: flex;           
+    align-items: center;     
     gap: 10rem;     
     color: white;
     padding: 20px;
