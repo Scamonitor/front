@@ -1,0 +1,53 @@
+.example-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .example-header {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 1.3em;
+    color: #d9534f;
+    margin-bottom: 10px;
+  }
+  
+  .phishing-section,
+  .legitimate-section {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #e8f0fe;
+  }
+  
+  .message h4 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .message p {
+    margin: 8px 0;
+  }
+  
+  .message a {
+    color: #d9534f;
+    text-decoration: underline;
+  }
+  
+  ul {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  
+  li {
+    margin: 5px 0;
+  }
+  

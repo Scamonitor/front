@@ -8,6 +8,8 @@ import Education from "./routes/Education.jsx";
 import Phishing from "./components/Phishing.jsx";
 import ImageResponse from "./components/ImageResponse.jsx";
 import FakeCall from "./components/FakeCall.jsx"
+import ExampleComponent from "./components/ExampleComponent.jsx";
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
             <Route path="/education/phishing" element={<Phishing />} />
             <Route path="/fraud/image/response" element={<ImageResponse />} />
             <Route path="/education/tec_support_calls" element={<FakeCall />} />
+            <Route path="/phishing/ejemplos" element={<ExampleComponent />} />
           </Routes>
         </div>
       </div>
