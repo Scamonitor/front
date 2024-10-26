@@ -31,15 +31,17 @@ function Audio() {
         <p className="title-audio">Analyze Audio</p>
       </div>
       <p>Click the button below to start recording your audio. Once finished, click stop to analyze.</p>
-      <div className="audio-controls">
+      <div className="sound-wave-container">
         <ReactMic
           record={record}
           className="sound-wave"
           onStop={onStop}
           mimeType="audio/wav"
           strokeColor="#000000"
-          backgroundColor="#FF4081"
+          backgroundColor="#BAD3F8"
         />
+      </div>
+      <div className="audio-controls">
         <button onClick={startRecording} type="button">Start Recording</button>
         <button onClick={stopRecording} type="button">Stop Recording</button>
       </div>
