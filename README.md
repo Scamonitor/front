@@ -7,6 +7,15 @@ To install the react-mic library, run the following command in your project dire
 ```bash
 npm install --save react-mic
 ```
+```bash
+npm install react-mic --legacy-peer-deps
+```
+
+```bash
+npm install react-icons --legacy-peer-deps
+```
+
+
 
 # Install the font image
 ```bash
