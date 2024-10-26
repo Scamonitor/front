@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/LoginPage.jsx";
 import Fraud from "./routes/Fraud.jsx"
 import Image from "./components/Imagen.jsx"
+import Audio from "./components/Audio.jsx"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
             <Route path="/" element={<LoginPage />} />
             <Route path="/fraud" element={<Fraud />} />
             <Route path="/fraud/image" element={<Image />} />
+            <Route path="/fraud/audio" element={<Audio />} />
 
           </Routes>
         </div>
