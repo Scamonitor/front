@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
 import { ReactMic } from 'react-mic';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons';
 import '../styles/audio.css'; // Make sure to create and style this CSS file
 
 function Audio() {
   const [record, setRecord] = useState(false);
 
-  const startRecording = () => {
-    setRecord(true);
-  };
-
-  const stopRecording = () => {
-    setRecord(false);
+  const toggleRecording = () => {
+    setRecord(prevRecord => !prevRecord);
   };
 
   const onStop = (recordedBlob) => {
     console.log('Recorded Blob:', recordedBlob);
     // Here you can send the recordedBlob to your backend
 
-    //Verify the MIME type of the recordedBlob
+    // Verify the MIME type of the recordedBlob
     if (recordedBlob.blob.type === 'audio/wav') {
       console.log('The MIME type of the recordedBlob is audio/wav');
     } else {
@@ -42,12 +40,12 @@ function Audio() {
         />
       </div>
       <div className="audio-controls">
-        <button onClick={startRecording} type="button">Start Recording</button>
-        <button onClick={stopRecording} type="button">Stop Recording</button>
+        <button onClick={toggleRecording} type="button" className="icon-button">
+          <FontAwesomeIcon icon={record ? faStop : faMicrophone} />
+        </button>
       </div>
     </div>
   );
 }
 
 export default Audio;
-
