@@ -1,62 +1,83 @@
-import React, { useRef } from 'react';
-import '../styles/imagen.css';
+import React, { useRef } from "react";
+import "../styles/imagen.css";
 import gallery from "../images/gallery.png";
-import imagendos from '../images/upload_image.png';
-import question from "../images/question.png" 
-import { useNavigate } from 'react-router-dom';
+import imagendos from "../images/upload_image.png";
+import question from "../images/question.png";
+import { useNavigate } from "react-router-dom";
 
-import PopUpIA from "./PopUpIA"
+import PopUpIA from "./PopUpIA";
 function Imagen() {
   const navigate = useNavigate();
 
   const fileInputRef = useRef(null);
 
   const handleContainerClick = () => {
-    fileInputRef.current.click(); 
+    fileInputRef.current.click();
   };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      console.log('Archivo seleccionado:', file);
+      console.log("Archivo seleccionado:", file);
     }
   };
-    return (
-      <div className="imagen-container">
-        <div className="imagen-card">
-        <p className="title-image">Analyze image</p>
-        <img className="icon-gallery" src={gallery} alt="Call icon" /> 
 
+  const uploadReport = () => {
+    const formData = new FormData();
+    formData.append("image_file", fileInputRef.current.files[0]);
+    formData.append("type", "IMAGE");
+    fetch("http://127.0.0.1:5000/reports", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // Assuming the backend responds with JSON
+      })
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  return (
+    <div className="imagen-container">
+      <div className="imagen-card">
+        <p className="title-image">Analyze image</p>
+        <img className="icon-gallery" src={gallery} alt="Call icon" />
       </div>
-      <p className='imagen-description'>Tapping the blue rectangle will open your gallery. 
-        Select the screenshot you took that seems suspicious.
-        We will use Artificial Intelligence to analyze this image and tell you what is going on.</p>
-        <button className="button-help">
-      <img className="question-mark" src={question} alt="Call icon" /> 
+      <p className="imagen-description">
+        Tapping the blue rectangle will open your gallery. Select the screenshot
+        you took that seems suspicious. We will use Artificial Intelligence to
+        analyze this image and tell you what is going on.
+      </p>
+      <button className="button-help">
+        <img className="question-mark" src={question} alt="Call icon" />
         ¿What is artificial intelligence?
-        </button>
-        <div className="upload-container"
-        onClick={handleContainerClick}>
-        
-          <img className="imagendos" src={imagendos} alt="Call icon" /> 
-          <input
+      </button>
+      <div className="upload-container" onClick={handleContainerClick}>
+        <img className="imagendos" src={imagendos} alt="Call icon" />
+        <input
           type="file"
           ref={fileInputRef}
           onChange={handleFileChange}
-          accept="image/*"  
-          style={{ display: 'none' }}  
+          accept="image/*"
+          style={{ display: "none" }}
         />
-        </div>    
-        <button 
-        onClick={() => navigate('/fraud/image/response')} 
-        style={{ cursor: 'pointer' }} 
+      </div>
+      <button
+        onClick={uploadReport}
+        style={{ cursor: "pointer" }}
         className="analisis-button"
       >
         Get analysis
       </button>
-      </div>
-    );
-  }
-  
-  export default Imagen;
-  
+    </div>
+  );
+}
+
+export default Imagen;
