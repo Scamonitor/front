@@ -75,6 +75,7 @@ function Audio() {
     fetch("http://127.0.0.1:5000/reports", {
       method: "POST",
       body: formData,
+      credentials: "include",
     })
       .then((response) => {
         if (!response.ok) {

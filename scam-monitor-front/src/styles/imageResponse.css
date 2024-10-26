@@ -55,10 +55,10 @@
 }
 .recommendation-container {
   background-color: #3c78dd;
-  height: 50px;
+  min-height: 50px;
+  max-height: 100px;
   border-radius: 20px;
   display: flex;
-
   align-items: center;
   padding: 10px;
   color: white;
