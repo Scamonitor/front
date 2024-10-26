@@ -28,6 +28,7 @@ function Imagen() {
     formData.append("type", "IMAGE");
     fetch("http://127.0.0.1:5000/reports", {
       method: "POST",
+      credentials: "include",
       body: formData,
     })
       .then((response) => {
