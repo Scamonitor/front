@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/exampleComponent.css';
+import NavBar from "../components/Navbar";
 
 function ExampleComponent() {
   return (
@@ -8,7 +9,7 @@ function ExampleComponent() {
         <h3 className="section-title">Examples of Real Phishing Messages:</h3>
         <h4>Alleged Bank Email</h4>
         <div className="gmail-container">
-          <p><strong>Subject:</strong> "Su cuenta ha sido suspendida - Necesita acción inmediata"</p>
+          <p><strong>Subject:</strong> "Your account has been suspended - Need immediate action"</p>
           <p><strong>Body:</strong> Dear Customer, We have detected unusual activity on your account.
           To protect your account, we have temporarily suspended your access. Please click the link below to verify your information and restore access to your account.
           <a href="#link">[Haga clic aquí para verificar]</a> If you do not verify your account within the next 24 hours, it will be permanently blocked. Sincerely, [Bank Name] Customer Support</p>
@@ -24,7 +25,7 @@ function ExampleComponent() {
       </div>
 
       <div className="phishing-section">
-        <h3 className="section-title">Examples of Legitimate Messages</h3>
+        <h3 className="section-title">Examples of Legitimate Messages:</h3>
         <h4>Real Bank Email</h4>
         <div className="gmail-container">
           <p><strong>Subject:</strong> "Confirmation of the recent transaction"</p>
@@ -40,6 +41,7 @@ function ExampleComponent() {
           </div>
         </div>
       </div>
+      <NavBar />
     </div>
   );
 }
