@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/exampleCalls.css';
+import NavBar from "../components/Navbar";
 
 function ExampleCalls() {
     const examples = [
@@ -19,6 +20,7 @@ function ExampleCalls() {
   
     return (
       <div className="example-calls-container">
+        <div className='mini-calls-container'>
         <button className="title-button">Examples of Fake Calls</button>  
         <div className='recommendations'>
           {examples.map((example, index) => (
@@ -32,6 +34,9 @@ function ExampleCalls() {
             </div>
           ))}
         </div>
+        </div>
+
+        <NavBar />
       </div>
     );
   }

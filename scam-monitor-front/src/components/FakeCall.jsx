@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/fakeCall.css';
+import NavBar from "../components/Navbar";
 
 function FakeCall() {
     const examples = [
@@ -36,6 +37,7 @@ function FakeCall() {
                   More Examples
               </button>
           </div>
+          <NavBar />
       </div>
     );
 }

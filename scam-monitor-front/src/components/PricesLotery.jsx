@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/pricesLotery.css';
 import won_iphone from "../images/won_iphone.png"
 import fake_message from "../images/fake_message.png"
+import NavBar from "../components/Navbar";
 
 function PricesLotery() {
 
@@ -21,7 +22,7 @@ function PricesLotery() {
                 <img className="fake-image" src={fake_message} alt="Call icon" /> 
                 </div>
             </div>
-
+            <NavBar />
       </div>
     );
 }

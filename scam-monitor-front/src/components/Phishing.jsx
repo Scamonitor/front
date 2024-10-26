@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/phishing.css';
+import NavBar from "../components/Navbar";
 
 function Phishing() {
   const examples = [
@@ -49,6 +50,7 @@ function Phishing() {
           Test Your Knowledge
         </button>
       </div>
+      <NavBar />
     </div>
   );
 }

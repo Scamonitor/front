@@ -8,9 +8,17 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  min-height: 100vh;
-  background-color: #f8f8f8; /* Light blue background for phone call theme */
+  min-height: 90vh;
+  background-color: #f8f8f8; 
   gap: 20px;
+}
+.mini-calls-container{
+  justify-content: center;
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  gap: 2rem;
+  margin: auto; 
 }
 
 .title-button {

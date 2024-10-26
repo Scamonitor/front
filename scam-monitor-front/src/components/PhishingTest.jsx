@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/PhishingTest.css';
+import NavBar from "../components/Navbar";
 
 function PhishingTest() {
     const questions = [
@@ -101,6 +102,7 @@ function PhishingTest() {
             </div>
             <button onClick={calculateScore} className="submit-button">Submit</button>
             {score !== null && <p className="score">Your score: {score} out of {questions.length}</p>}
+            <NavBar />
         </div>
     );
 }
