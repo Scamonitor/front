@@ -1,4 +1,6 @@
 import { useState } from "react";
+import InfiniteCarousel from "./InfiniteCarousel";
+import "../styles/login.css";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -16,25 +18,29 @@ const LoginPage = () => {
 
   return(
     <div className="login-form-wrapper">
-      <div>Stack Monitor</div>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label for="e-mail">Email</label>
+      <h1>Scam Monitor</h1>
+      <InfiniteCarousel />
+      <h3>Inicia sesíon</h3>
+      <form className="login-form" onSubmit={handleSubmit}>        <div className="input-wrapper">
         <input 
-          name="e-mail"
-          type="text"
-          required
-          autoComplete="off"
-          placeholder="correo electrónico"
-          onChange={(e) => {setEmail(e.target.value)}}
-        ></input>
-        <label for="password">Contraseña</label>
+            name="e-mail"
+            type="text"
+            required
+            autoComplete="off"
+            onChange={(e) => {setEmail(e.target.value)}}
+          ></input>
+          <label for="e-mail">Email</label>
+        </div>
+        <div className="input-wrapper">
         <input
-          name="password"
-          type="password"
-          required
-          placehlder="contraseña"
-          onChange={(e) => {setPassword(e.target.value)}}
-        ></input>
+            name="password"
+            type="password"
+            required
+            placehlder="contraseña"
+            onChange={(e) => {setPassword(e.target.value)}}
+          ></input>
+          <label for="password">Contraseña</label>
+        </div>
         <button>Iniciar sesión</button>
       </form>
     </div>

@@ -1,0 +1,76 @@
+h1 {
+    font-size: 2em;
+}
+
+.login-form-wrapper {
+    width: 55%;
+    position: relative;
+    left: 20%;
+}
+
+.login-form {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 1rem;
+    align-items: stretch;
+    justify-items: center;
+    min-height: 40vh;
+}
+
+.login-form button {
+    outline: 0px;
+    border: 0px;
+    border-radius: 25px;
+    background-color: #F0F8FF;
+    padding: 1em;
+    max-width: auto;
+    position: relative;
+    top: 2.5rem;
+    transition: all 0.3s ease-in;
+    font-weight: 700;
+}
+
+.login-form button:hover {
+    background-color: #00308F;
+    outline: #00308F;
+    color: #F0F8FF;
+}
+
+.input-wrapper {
+    width: auto;
+    position: relative;
+    top: 2.5rem;
+}
+
+.input-wrapper input {
+    width: 97.5%;
+    border-radius: 25px;
+    border: 0px;
+    padding: 0.5em;
+    background: #F0F8FF;
+}
+
+.input-wrapper label  {
+    position: relative;
+    bottom: 1.6rem;
+    left: 1rem;
+    transition: all 0.3s ease-in;
+    font-weight: 700;
+}
+
+.input-wrapper input:valid + label {
+    color: #00308F;
+    bottom: 3.54rem;
+}
+
+.input-wrapper input:focus {
+    outline: 2px solid #00308F;
+}
+
+.input-wrapper input:focus + label {
+    bottom: 3.54rem;
+}
+
+.input-wrapper input:valid {
+    outline: 2px solid #00308F;
+}
