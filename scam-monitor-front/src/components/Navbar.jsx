@@ -7,11 +7,11 @@ import "../styles/navbar.css"
 
 const NavBar = () => {
 
-  const style = { display: "block", textDecoration: "none", color: "black" };
+  const style = { display: "block", textDecoration: "none", color: "white" };
 
   return(
     <nav className="navbar-wrapper">
-      <IconContext.Provider value={{color: "black"}}>
+      <IconContext.Provider value={{color: "white"}}>
       <ul 
         className="links"
         style={{display: "flex", flexFlow: "row, nowrap"}}

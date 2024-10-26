@@ -47,7 +47,7 @@ function Imagen() {
   return (
     <div className="imagen-container">
       <div className="imagen-card">
-        <p className="title-image">Analyze image</p>
+        <p className="test-title">Analyze image</p>
         <img className="icon-gallery" src={gallery} alt="Call icon" />
       </div>
       <p className="imagen-description">
@@ -70,7 +70,7 @@ function Imagen() {
         />
       </div>
       <button
-        onClick={uploadReport}
+       onClick={() => navigate('/fraud/image/response')} 
         style={{ cursor: "pointer" }}
         className="analisis-button"
       >

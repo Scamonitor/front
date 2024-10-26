@@ -21,9 +21,9 @@ function Phishing() {
   const navigate = useNavigate();
 
   return (
-    <div className="response-container">
+    <div className="phishing-container">
       <div className="imagen-card">
-        <p className="title-image">Phishing Attacks</p>
+        <p className="test-title">Phishing Attacks</p>
       </div>
       <p className="fake-description">
         Phishing attacks try to steal your sensitive information by pretending to be legitimate organizations. 
@@ -45,7 +45,7 @@ function Phishing() {
         <button onClick={() => navigate('/phishing/ejemplos')} className="phishing-button">
           More Examples
         </button>
-        <button onClick={() => navigate('/phishing/evaluacion')} className="phishing-button">
+        <button onClick={() => navigate('/phishing/test')} className="phishing-button">
           Test Your Knowledge
         </button>
       </div>

@@ -9,8 +9,6 @@ function Education() {
 
   return (
     <div className="education-container">
-      <h1 className="education-main-title">Amenazas más comunes</h1>
-      
       <div
         className="education-card"
         onClick={() => navigate('/education/phishing')} 

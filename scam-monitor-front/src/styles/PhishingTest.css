@@ -1,0 +1,74 @@
+.phishing-test-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.submit-button {
+    background-color: #3C78DD;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    width: 150px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.score {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+}
+.test-title{
+    color:White;
+    font-weight: bold;
+    font-size: 30px;
+}

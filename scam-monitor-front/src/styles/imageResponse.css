@@ -6,8 +6,9 @@
     padding: 20px;
     background-color: #EFEFEF;
     width: 100%;
-    height: screen;
+    height: 100vh;
     justify-content: center;
+
   }
   .response-title{
     color:black;
