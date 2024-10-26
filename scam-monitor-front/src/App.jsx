@@ -5,6 +5,7 @@ import Image from "./components/Imagen.jsx"
 import Audio from "./components/Audio.jsx"
 import Profile from "./routes/Profile.jsx";
 import Education from "./routes/Education.jsx";
+import Phishing from "./components/Phishing.jsx";
 import ImageResponse from "./components/ImageResponse.jsx";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/fraud/audio" element={<Audio />} />
             <Route path="/profile" element={<Profile />} /> 
             <Route path="/education" element={<Education />} />
+            <Route path="/education/phishing" element={<Phishing />} />
             <Route path="/fraud/image/response" element={<ImageResponse />} />
           </Routes>
         </div>
