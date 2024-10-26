@@ -35,7 +35,6 @@ function ExampleCalls() {
           ))}
         </div>
         </div>
-
         <NavBar />
       </div>
     );

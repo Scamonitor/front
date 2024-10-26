@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophone, faStop } from "@fortawesome/free-solid-svg-icons";
+import NavBar from "../components/Navbar";
 import "../styles/audio.css"; // Make sure to create and style this CSS file
+
 
 import { MediaRecorder, register } from "extendable-media-recorder";
 import { connect } from "extendable-media-recorder-wav-encoder";
@@ -127,6 +129,7 @@ function Audio() {
           )}
         </button>
       </div>
+      <NavBar />
     </div>
   );
 }
