@@ -9,7 +9,13 @@ function ImageResponse() {
   const location = useLocation();
   const data = location.state;
 
-  const recommendations = JSON.parse(data.report.recommendations);
+  let recommendations = [];
+  try {
+    recommendations = JSON.parse(data.report.recommendations);
+  } catch (e) {
+    alert("Error getting personalized recommendations");
+    recommendations = [];
+  }
 
   console.log(data);
 

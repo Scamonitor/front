@@ -5,8 +5,11 @@ import "../styles/audio.css"; // Make sure to create and style this CSS file
 
 import { MediaRecorder, register } from "extendable-media-recorder";
 import { connect } from "extendable-media-recorder-wav-encoder";
+import { useNavigate } from "react-router-dom";
 
 function Audio() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [audioBlob, setAudioBlob] = useState(null);
   const [recording, setRecording] = useState(false);
   const mediaRecorderRef = useRef(null);
@@ -72,6 +75,7 @@ function Audio() {
     console.log("BLOB", blob);
     formData.append("audio_file", blob, "record-audio.wav"); // The third argument is the file name
     formData.append("type", "AUDIO"); // The user ID
+    setLoading(true);
     fetch("http://127.0.0.1:5000/reports", {
       method: "POST",
       body: formData,
@@ -85,9 +89,12 @@ function Audio() {
       })
       .then((data) => {
         console.log("Success:", data);
+        navigate("/fraud/image/response", { state: { report: data } });
       })
       .catch((error) => {
         console.error("Error:", error);
+        alert("Something went wrong");
+        setLoading(false);
       });
   };
 
@@ -111,8 +118,13 @@ function Audio() {
           onClick={recording ? stopRecording : startRecording}
           type="button"
           className="icon-button"
+          disabled={loading}
         >
-          <FontAwesomeIcon icon={recording ? faStop : faMicrophone} />
+          {loading ? (
+            "Loading..."
+          ) : (
+            <FontAwesomeIcon icon={recording ? faStop : faMicrophone} />
+          )}
         </button>
       </div>
     </div>
