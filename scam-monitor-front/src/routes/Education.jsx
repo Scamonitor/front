@@ -1,5 +1,6 @@
 import '../styles/education.css';
 import { useNavigate } from 'react-router-dom';
+import NavBar from "../components/Navbar";
 
 function Education() {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ function Education() {
       >
         <p className="education-title">Estafas de premios y loterías</p>
       </div>
+      <NavBar />
     </div>
   );
 }

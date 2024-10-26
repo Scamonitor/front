@@ -4,6 +4,7 @@ import call from "../images/call.png";
 import message from "../images/message.png";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavBar from "../components/Navbar";
 
 function Fraud() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function Fraud() {
         <p className="title-card">Analyze text</p>
         <img className="icon-image" src={message} alt="Message icon" />
       </div>
+      <NavBar />
     </div>
   );
 }

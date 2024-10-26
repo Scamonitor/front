@@ -1,0 +1,14 @@
+.navbar-wrapper {
+    border: 10px solid black; 
+    width: 90%;
+    border-radius: 30px;
+}
+
+.links {
+    height: 100%;
+    display: flex ;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+

@@ -1,13 +1,12 @@
 .fraud-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    padding: 20px;
-    background-color: #EFEFEF;
-    width: 100%;
-    justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  background-color: #EFEFEF;
+  width: 100%;
+  justify-content: center;
 }
 @keyframes strongPulse {
   0% {
@@ -40,13 +39,13 @@
   animation: strongPulse 1.5s infinite ease-in-out;
   cursor: pointer;
 }
-  .title-card{
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    width: 20px;
-  }
-  .icon-image{
-    width: 90px;
-    height: 80px;
-  }
+.title-card{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  width: 20px;
+}
+.icon-image{
+  width: 90px;
+  height: 80px;
+}

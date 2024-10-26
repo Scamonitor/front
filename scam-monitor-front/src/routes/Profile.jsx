@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/profile.css';
 import profileImage from '../images/profile.png'; 
+import NavBar from "../components/Navbar";
 
 function Profile() {
   return (
@@ -21,6 +22,7 @@ function Profile() {
 
         <button type="submit" className="save-button">Save changes</button>
       </form>
+      <NavBar />
     </div>
   );
 }
