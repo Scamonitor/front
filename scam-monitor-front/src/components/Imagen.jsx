@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/imagen.css';
-import imagendos from './images/upload_image.png'; 
+import '../styles/imagen.css';
+import imagendos from '../images/upload_image.png'; 
 function Imagen() {
     return (
       <div className="imagen-container">

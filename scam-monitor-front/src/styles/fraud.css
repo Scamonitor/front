@@ -11,7 +11,9 @@
 
 }
   .fraud-card {
-  
+    display: flex;           /* Activa flexbox */
+    align-items: center;     /* Centra verticalmente los elementos */
+    gap: 10rem;     
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -29,6 +31,6 @@
     width: 20px;
   }
   .icon-image{
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 80px;
   }
