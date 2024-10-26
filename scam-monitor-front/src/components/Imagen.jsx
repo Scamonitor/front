@@ -4,6 +4,7 @@ import gallery from "../images/gallery.png";
 import imagendos from "../images/upload_image.png";
 import question from "../images/question.png";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../components/Navbar";
 
 import PopUpIA from "./PopUpIA";
 function Imagen() {
@@ -83,6 +84,7 @@ function Imagen() {
       >
         {loading ? "Analyzing..." : "Analyze"}
       </button>
+      <NavBar />
     </div>
   );
 }

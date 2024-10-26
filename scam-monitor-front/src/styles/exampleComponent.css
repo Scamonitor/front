@@ -17,14 +17,31 @@
     justify-content: center;
     align-items: center;
   }
-  .gmail-container{
+  .gmail-container {
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     padding: 5px;
+    animation: pulse 1.5s infinite;
   }
   
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+
   .phishing-section {
     position: relative;
     width: 100%;
@@ -37,6 +54,24 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     cursor: pointer;
+  }
+  .tooltip {
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transform: translate(0, -100%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    z-index: 10;
+  }
+  
+  .gmail-container:hover .tooltip {
+    display: block;
   }
  
   .message h4 {

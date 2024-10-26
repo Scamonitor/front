@@ -5,23 +5,25 @@ import NavBar from "../components/Navbar";
 
 function Profile() {
   return (
-    <div className="profile-container">
-      <div className="profile-header">
-        <h2>Profile</h2>
+    <div className="profile-full-container">
+      <div className='mini-profile-container'>
+      <div className="imagen-card">
+     <p className="test-title">Profile</p>
         <img className="profile-icon" src={profileImage} alt="Profile icon" /> 
       </div>
       <form className="profile-form">
-        <label>Name:</label>
+        <label className='request-title'>Name:</label>
         <input type="text" className="input-field" placeholder="Enter your name" />
-
-        <label>Email:</label>
+        <label className='request-title'>Email:</label>
         <input type="email" className="input-field" placeholder="Enter your email" />
 
-        <label>Email of a trusted relative:</label>
+        <label className='request-title'>Email of a trusted relative:</label>
         <input type="email" className="input-field" placeholder="Enter a relative's email" />
 
         <button type="submit" className="save-button">Save changes</button>
       </form>
+      </div>
+     
       <NavBar />
     </div>
   );

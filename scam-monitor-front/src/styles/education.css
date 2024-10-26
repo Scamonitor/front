@@ -51,4 +51,6 @@
     height: 80vh;
     flex-direction: column;
     gap: 2rem;
+    margin: auto; 
+    justify-content: center;
   }

@@ -3,6 +3,7 @@ import "../styles/imageResponse.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faWarning } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
+import NavBar from "../components/Navbar";
 
 function ImageResponse() {
   const location = useLocation();
@@ -41,6 +42,7 @@ function ImageResponse() {
           </div>
         ))}
       </div>
+      <NavBar />
     </div>
   );
 }
