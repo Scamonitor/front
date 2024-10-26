@@ -27,7 +27,7 @@ function ImageResponse() {
           icon={data.report.verdict == "no scam" ? faCheck : faWarning}
           className="check-icon"
         />
-        {data.report.veredict == "no scam" ? (
+        {data.report.verdict == "no scam" ? (
           <p>This is not likely to be a threat</p>
         ) : (
           <p>This is likely to be a threat</p>
