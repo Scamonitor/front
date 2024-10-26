@@ -27,8 +27,11 @@ function Audio() {
     <div className="audio-container">
       <div className="audio-card">
         <p className="title-audio">Analyze Audio</p>
+        <FontAwesomeIcon icon={faMicrophone} size="2x" color="#ffffff" />
       </div>
-      <p>Click the button below to start recording your audio. Once finished, click stop to analyze.</p>
+      <p className="audio-description">
+        Click the button below to start recording your audio. Once finished, click stop to analyze.
+      </p>
       <div className="sound-wave-container">
         <ReactMic
           record={record}
