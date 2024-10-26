@@ -11,6 +11,7 @@ function Fraud() {
 
   return (
     <div className="fraud-container">
+      <div className='smaller-container'>
       <div
         className="fraud-card"
         onClick={() => navigate('/fraud/audio')} // Navigate to audio subroute
@@ -24,12 +25,9 @@ function Fraud() {
         onClick={() => navigate('/fraud/image')} // Navigate to image subroute
         style={{ cursor: 'pointer' }}
       >
-        <p className="title-card">Analyze image</p>
+        <p className="title-card">Analyze message</p>
         <img className="icon-image" src={gallery} alt="Gallery icon" />
       </div>
-      <div className="fraud-card">
-        <p className="title-card">Analyze text</p>
-        <img className="icon-image" src={message} alt="Message icon" />
       </div>
       <NavBar />
     </div>

@@ -9,6 +9,7 @@ function Education() {
 
   return (
     <div className="education-container">
+      <div className='medium-container'>
       <div
         className="education-card"
         onClick={() => navigate('/education/phishing')} 
@@ -33,6 +34,8 @@ function Education() {
         <p className="education-title">Estafas de premios</p>
         <img className="icon-image" src={gift} alt="Call icon" />
       </div>
+      </div>
+
       <NavBar />
     </div>
   );

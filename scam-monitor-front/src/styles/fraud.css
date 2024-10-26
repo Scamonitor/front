@@ -9,6 +9,12 @@
   justify-content: center;
   height: 100vh;
 }
+.smaller-container{
+  display: flex;
+  height: 70vh;
+  flex-direction: column;
+  gap: 10rem;
+}
 @keyframes strongPulse {
   0% {
     transform: scale(1);
