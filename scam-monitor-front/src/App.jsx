@@ -4,6 +4,7 @@ import Fraud from "./routes/Fraud.jsx"
 import Image from "./components/Imagen.jsx"
 import Audio from "./components/Audio.jsx"
 import Profile from "./routes/Profile.jsx";
+import Education from "./routes/Education.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/fraud/image" element={<Image />} />
             <Route path="/fraud/audio" element={<Audio />} />
             <Route path="/profile" element={<Profile />} /> 
+            <Route path="/education" element={<Education />} />
           </Routes>
         </div>
       </div>
