@@ -92,3 +92,17 @@
   height:25rem;
   width:25rem;
 }
+.analisis-button{
+  background-color: #DB4437;
+  border-radius: 30px;
+  padding: 15px;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  border: none;         
+  outline: none;    
+  gap: 1rem;
+  font-weight: bold;
+  font-size: 15px;    
+  cursor: pointer;   
+}

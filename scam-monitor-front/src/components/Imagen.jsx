@@ -3,8 +3,11 @@ import '../styles/imagen.css';
 import gallery from "../images/gallery.png";
 import imagendos from '../images/upload_image.png';
 import question from "../images/question.png" 
+import { useNavigate } from 'react-router-dom';
+
 import PopUpIA from "./PopUpIA"
 function Imagen() {
+  const navigate = useNavigate();
 
   const fileInputRef = useRef(null);
 
@@ -43,7 +46,14 @@ function Imagen() {
           accept="image/*"  
           style={{ display: 'none' }}  
         />
-        </div>      
+        </div>    
+        <button 
+        onClick={() => navigate('/fraud/image/response')} 
+        style={{ cursor: 'pointer' }} 
+        className="analisis-button"
+      >
+        Get analysis
+      </button>
       </div>
     );
   }
