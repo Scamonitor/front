@@ -34,7 +34,7 @@ const LoginPage = () => {
     <div className="login-form-wrapper">
       <h1>Scam Monitor</h1>
       <InfiniteCarousel />
-      <h3>Inicia sesíon</h3>
+      <h3>Log in</h3>
       <form className="login-form" onSubmit={handleSubmit}>
         {" "}
         <div className="input-wrapper">
@@ -59,9 +59,9 @@ const LoginPage = () => {
               setPassword(e.target.value);
             }}
           ></input>
-          <label for="password">Contraseña</label>
+          <label for="password">Password</label>
         </div>
-        <button>Iniciar sesión</button>
+        <button>Log in</button>
       </form>
     </div>
   );

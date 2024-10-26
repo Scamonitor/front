@@ -12,12 +12,14 @@ import PricesLotery from "./components/PricesLotery.jsx"
 import ExampleComponent from "./components/ExampleComponent.jsx"
 import PhishingTest from "./components/PhishingTest.jsx";
 import ExampleCalls from "./components/ExampleCalls.jsx";
+import LandingPage from "./components/LandingPage.jsx";
 function App() {
   return (
     <Router>
       <div className="App">
         <div className="App-content">
           <Routes>
+            <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/fraud" element={<Fraud />} />
             <Route path="/fraud/image" element={<Image />} />
