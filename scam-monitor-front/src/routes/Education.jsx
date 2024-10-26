@@ -23,7 +23,7 @@ function Education() {
         onClick={() => navigate('/education/tec_support_calls')} 
         style={{ cursor: 'pointer' }}
       >
-        <p className="education-title">Llamadas falsas</p>
+        <p className="education-title">Fake calls</p>
         <img className="fake-image-call" src={fakecall} alt="Call icon" />
       </div>
       <div
@@ -31,7 +31,7 @@ function Education() {
         onClick={() => navigate('/education/prices_lotery')}
         style={{ cursor: 'pointer' }}
       >
-        <p className="education-title">Estafas de premios</p>
+        <p className="education-title">Fake prize</p>
         <img className="icon-image" src={gift} alt="Call icon" />
       </div>
       </div>

@@ -83,7 +83,7 @@
 }
 
 .call-card .card-back {
-  background-color: #2a62b1; /* Darker teal for the back side */
+  background-color: #001a3f; /* Darker teal for the back side */
   color: #fff;
   transform: rotateY(180deg);
 }
