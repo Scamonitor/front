@@ -9,6 +9,7 @@ import Phishing from "./components/Phishing.jsx";
 import ImageResponse from "./components/ImageResponse.jsx";
 import FakeCall from "./components/FakeCall.jsx"
 import ExampleComponent from "./components/ExampleComponent.jsx";
+import PricesLotery from "./components/PricesLotery.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/fraud/image/response" element={<ImageResponse />} />
             <Route path="/education/tec_support_calls" element={<FakeCall />} />
             <Route path="/phishing/ejemplos" element={<ExampleComponent />} />
+            <Route path="/education/prices_lotery" element={<PricesLotery />} />
           </Routes>
         </div>
       </div>

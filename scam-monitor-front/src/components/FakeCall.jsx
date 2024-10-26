@@ -11,7 +11,7 @@ function FakeCall() {
     return (
       <div className="response-container">
           <div className="imagen-card">
-              <p className="title-image">Fake calls</p>
+              <p className="title-fake">Fake calls</p>
         </div>
         <p className="fake-description">Sometimes, you might receive a phone call from someone pretending to be a friend, family member, or even a delivery company. Here are some common ways these fake calls try to trick you:</p>
         <div className='recommendations'>

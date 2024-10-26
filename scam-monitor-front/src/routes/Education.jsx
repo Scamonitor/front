@@ -25,7 +25,7 @@ function Education() {
         style={{ cursor: 'pointer' }}
       >
         <p className="education-title">Llamadas falsas</p>
-        <img className="fake-image" src={fakecall} alt="Call icon" />
+        <img className="fake-image-call" src={fakecall} alt="Call icon" />
       </div>
       <div
         className="education-card"
