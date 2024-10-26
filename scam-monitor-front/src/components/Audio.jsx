@@ -16,6 +16,10 @@ function Audio() {
   const [recording, setRecording] = useState(false);
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
+  const audioContextRef = useRef(null);
+  const analyserRef = useRef(null);
+  const canvasRef = useRef(null);
+  const animationIdRef = useRef(null);
 
   const [record, setRecord] = useState(false);
 
@@ -26,6 +30,14 @@ function Audio() {
       mediaRecorderRef.current = new MediaRecorder(stream, {
         mimeType: "audio/wav",
       });
+
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      audioContextRef.current = audioContext;
+      const source = audioContext.createMediaStreamSource(stream);
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 2048;
+      source.connect(analyser);
+      analyserRef.current = analyser;
 
       mediaRecorderRef.current.ondataavailable = (event) => {
         audioChunksRef.current.push(event.data);
@@ -56,6 +68,10 @@ function Audio() {
             .forEach((track) => track.stop());
         }
       }
+      if (audioContextRef.current) {
+        audioContextRef.current.close();
+      }
+      cancelAnimationFrame(animationIdRef.current);
     };
   }, []);
 
@@ -64,19 +80,62 @@ function Audio() {
     audioChunksRef.current = [];
     mediaRecorderRef.current.start();
     setRecording(true);
+    drawWaveform();
   }
 
   function stopRecording() {
     if (!mediaRecorderRef.current) return;
     mediaRecorderRef.current.stop();
     setRecording(false);
+    cancelAnimationFrame(animationIdRef.current);
+  }
+
+  function drawWaveform() {
+    const canvas = canvasRef.current;
+    const canvasCtx = canvas.getContext("2d");
+    const analyser = analyserRef.current;
+    const bufferLength = analyser.fftSize;
+    const dataArray = new Uint8Array(bufferLength);
+
+    function draw() {
+      analyser.getByteTimeDomainData(dataArray);
+      canvasCtx.fillStyle = "#EFEFEF";
+      canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+      canvasCtx.lineWidth = 2;
+      canvasCtx.strokeStyle = "#007bff";
+      canvasCtx.beginPath();
+
+      const sliceWidth = (canvas.width * 1.0) / bufferLength;
+      let x = 0;
+
+      for (let i = 0; i < bufferLength; i++) {
+        const v = dataArray[i] / 128.0;
+        const y = (v * canvas.height) / 2;
+
+        if (i === 0) {
+          canvasCtx.moveTo(x, y);
+        } else {
+          canvasCtx.lineTo(x, y);
+        }
+
+        x += sliceWidth;
+      }
+
+      canvasCtx.lineTo(canvas.width, canvas.height / 2);
+      canvasCtx.stroke();
+
+      animationIdRef.current = requestAnimationFrame(draw);
+    }
+
+    draw();
   }
 
   const uploadRecording = (blob) => {
     const formData = new FormData();
     console.log("BLOB", blob);
-    formData.append("audio_file", blob, "record-audio.wav"); // The third argument is the file name
-    formData.append("type", "AUDIO"); // The user ID
+    formData.append("audio_file", blob, "record-audio.wav");
+    formData.append("type", "AUDIO");
     setLoading(true);
     fetch("http://127.0.0.1:5000/reports", {
       method: "POST",
@@ -87,7 +146,7 @@ function Audio() {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json(); // Assuming the backend responds with JSON
+        return response.json();
       })
       .then((data) => {
         console.log("Success:", data);
@@ -111,9 +170,7 @@ function Audio() {
         click stop to analyze.
       </p>
       <div className="sound-wave-container">
-        <button onClick={recording ? stopRecording : startRecording}>
-          hiii
-        </button>
+        <canvas ref={canvasRef} className="sound-wave"></canvas>
       </div>
       <div className="audio-controls">
         <button
