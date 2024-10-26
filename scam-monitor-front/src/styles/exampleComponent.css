@@ -10,15 +10,35 @@
     color: #d9534f;
     margin-bottom: 10px;
   }
-  
-  .phishing-section,
-  .legitimate-section {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background-color: #e8f0fe;
+  .example-phishing-container{
+    display: flex;
+    flex-direction: column;
+    height: screen;
+    justify-content: center;
+    align-items: center;
+  }
+  .gmail-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 5px;
   }
   
+  .phishing-section {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #A8CBFF;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+ 
   .message h4 {
     font-size: 1.1em;
     margin: 10px 0;
