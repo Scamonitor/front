@@ -39,6 +39,7 @@ function Imagen() {
       })
       .then((data) => {
         console.log("Success:", data);
+        navigate("/fraud/image/response", { state: { report: data } });
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -71,7 +72,7 @@ function Imagen() {
         />
       </div>
       <button
-       onClick={() => navigate('/fraud/image/response')} 
+        onClick={() => uploadReport()}
         style={{ cursor: "pointer" }}
         className="analisis-button"
       >

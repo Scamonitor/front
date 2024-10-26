@@ -45,9 +45,11 @@ function Audio() {
     enableStream();
     return () => {
       if (mediaRecorderRef.current) {
-        mediaRecorderRef.current.stream
-          .getTracks()
-          .forEach((track) => track.stop());
+        if (mediaRecorderRef.current.stream) {
+          mediaRecorderRef.current.stream
+            .getTracks()
+            .forEach((track) => track.stop());
+        }
       }
     };
   }, []);
