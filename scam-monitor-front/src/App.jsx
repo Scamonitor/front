@@ -11,7 +11,7 @@ import FakeCall from "./components/FakeCall.jsx"
 import PricesLotery from "./components/PricesLotery.jsx"
 import ExampleComponent from "./components/ExampleComponent.jsx"
 import PhishingTest from "./components/PhishingTest.jsx";
-
+import ExampleCalls from "./components/ExampleCalls.jsx";
 function App() {
   return (
     <Router>
@@ -30,6 +30,7 @@ function App() {
             <Route path="/education/prices_lotery" element={<PricesLotery />} />
             <Route path="/phishing/ejemplos" element={<ExampleComponent />} />
             <Route path="/phishing/test" element={<PhishingTest />} />
+            <Route path="/tec_support_calls/ejemplos" element={<ExampleCalls />} />
           </Routes>
         </div>
       </div>
