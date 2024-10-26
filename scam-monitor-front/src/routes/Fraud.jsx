@@ -4,6 +4,7 @@ import call from "../images/call.png";
 import message from "../images/message.png";
 import Imagen from "../components/Imagen";
 import React, { useState } from 'react';
+import Audio from "../components/Audio"; 
 
 function Fraud() {
   const [showImage, setShowImage] = useState(false);
