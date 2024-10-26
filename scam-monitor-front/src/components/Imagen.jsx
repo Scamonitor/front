@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import PopUpIA from "./PopUpIA";
 function Imagen() {
   const navigate = useNavigate();
+  const [loading, setLoading] = React.useState(false);
 
   const fileInputRef = useRef(null);
 
@@ -26,6 +27,7 @@ function Imagen() {
     const formData = new FormData();
     formData.append("image_file", fileInputRef.current.files[0]);
     formData.append("type", "IMAGE");
+    setLoading(true);
     fetch("http://127.0.0.1:5000/reports", {
       method: "POST",
       credentials: "include",
@@ -43,6 +45,8 @@ function Imagen() {
       })
       .catch((error) => {
         console.error("Error:", error);
+        alert("Something went wrong");
+        setLoading(false);
       });
   };
 
@@ -72,11 +76,12 @@ function Imagen() {
         />
       </div>
       <button
+        disabled={loading}
         onClick={() => uploadReport()}
         style={{ cursor: "pointer" }}
-        className="analisis-button"
+        className={`analisis-button ${loading ? "loading" : ""}`}
       >
-        Get analysis
+        {loading ? "Analyzing..." : "Analyze"}
       </button>
     </div>
   );
