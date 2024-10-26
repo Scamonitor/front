@@ -6,26 +6,28 @@ function Education() {
 
   return (
     <div className="education-container">
+      <h1 className="education-main-title">Amenazas más comunes</h1>
+      
       <div
         className="education-card"
-        onClick={() => navigate('/education/common-threats')} 
+        onClick={() => navigate('/education/phishing')} 
         style={{ cursor: 'pointer' }}
       >
-        <p className="education-title">Amenazas más comunes</p>
+        <p className="education-title">Phishing</p>
       </div>
       <div
         className="education-card"
-        onClick={() => navigate('/education/detect-threats')} 
+        onClick={() => navigate('/education/tec_support_calls')} 
         style={{ cursor: 'pointer' }}
       >
-        <p className="education-title">Cómo detectar una amenaza</p>
+        <p className="education-title">Llamadas de soporte técnico falsas</p>
       </div>
       <div
         className="education-card"
-        onClick={() => navigate('/education/react-threats')}
+        onClick={() => navigate('/education/prices_lotery')}
         style={{ cursor: 'pointer' }}
       >
-        <p className="education-title">Cómo actuar ante una amenaza</p>
+        <p className="education-title">Estafas de premios y loterías</p>
       </div>
     </div>
   );

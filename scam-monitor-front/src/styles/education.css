@@ -9,6 +9,14 @@
     justify-content: center;
 }
 
+.education-main-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2A62B1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .education-card {
     display: flex;
     align-items: center;
@@ -24,7 +32,7 @@
 }
 
 .education-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     color: white;
